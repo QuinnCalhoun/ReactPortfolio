@@ -11,29 +11,30 @@ const Home = (props) => (<>
             still as a full-stack developer because his start-up hit Covid like
             a brick in snow and he's the only one left please someone send help or interns
                 </p>,
-            <Container key='media' textAlign='center' content={Utils.socialMediaMenu} />,
+            <Container key='media' textAlign='center' content={Utils.socialMediaMenu(['Professional Stuff', 'A rather clever Tweetbot', 'Projects and graveyards'])} />,
 
         ]} />,
         <Grid
             key='1'
             stackable
-            relaxed
             columns='2'
             children={[
                 <Grid.Column
                     key='0'
                     width='8'
-                    // children={<TwitterTimelineEmbed
-                    //     sourceType="profile"
-                    //     screenName="WritePrettyCode"
-                    //     options={{ height: 300, }}
-                    //     noHeader
-                    //     noFooter
-                    //     noScrollbar
-                    // />}
+                    children={
+                    <TwitterTimelineEmbed
+                        sourceType="profile"
+                        screenName="WritePrettyCode"
+                        options={{ height: 300,}}
+                        noHeader
+                        noFooter
+                        noScrollbar
+                        noBorders
+                    />}
                 />,
                 <Grid.Column
-                        key='1'
+                    key='1'
                     width='8'
                     children={
                         <GithubCard />
